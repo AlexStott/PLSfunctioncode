@@ -1,5 +1,7 @@
-function [ Xp, Yp, Xs, Ys, B,W , C, R,b] = snplssvdunitsc( X, Y, n )
+function [ Xp, Yp, Xs, Ys, B,W , C] = snplssvdunitsc( X, Y, n )
 %NIPALS PLS algorithm computed from SVD http://www.eigenvector.com/evriblog/?p=86
+
+
 
 P  = [];%Matrix for loadings of X onto latent variable T
 T = [];%Matrix for latent variables 
@@ -7,15 +9,14 @@ Q = [];%Matrix for loadings of Y onto latent variable U
 U = [];%Matrix for Y latent variable - taken from T
 W = [];%Matrix for weight vector for X
 C = [];%Matrix for weight vector for Y
-b= [];
-R = [];
+
 
 S = X'*Y;
 
 for i = 1:n
     [Us,Es,Vs] = svd(S); %obtain eigen value for S
     w1 = Us(:,1); %Dominant Eigen vector is the weight 
-    r1 = Vs(1,:).';
+    
     t1 = X*w1; %X compute scores
     t1 = t1/norm(t1);
     c1 = Y'*t1/(t1'*t1); %compute Y loading for latent variable
@@ -34,8 +35,7 @@ for i = 1:n
     U(:,i) = u1;
     W(:,i) = w1;
     C(:,i) = c1;
-    b(:,i) = b1;
-    R(:,i) = r1;
+
     
     S = X'*Y;
 end
