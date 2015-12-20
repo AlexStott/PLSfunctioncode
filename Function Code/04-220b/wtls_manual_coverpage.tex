@@ -1,0 +1,50 @@
+% ?? -> report #
+
+\newcommand{\matlab}{{\sc Matlab}}
+\documentclass[11pt,titlepage]{article}
+\setlength{\footnotesep}{7mm}
+
+\title{     \ \vspace{-8cm} \\
+            {\Large\bf \ 
+        Katholieke Universiteit Leuven \hfill \ \  }\\*[-3mm] 
+             \ \hrulefill \  \\*[1mm]
+             \large\ 
+        Departement Elektrotechniek\ \hfill \ ESAT-SISTA/TR 2004-220 \\
+             \protect{\vspace*{4cm}} 
+             \Large 
+        A \matlab\ toolbox for weighted total least squares approximation\thanks{ \protect\small
+                                                 \protect\parbox[t]{12cm}{
+             This report is available by anonymous ftp from 
+             {\it ftp.esat.kuleuven.ac.be} in the directory 
+             {\it pub/sista/markovsky/reports/04-220.ps.gz}  }} 
+      }
+\author{Ivan Markovsky and Sabine Van Huffel\thanks{ \protect\small
+                                 \protect\parbox[t]{12cm}{
+              K.U.Leuven, Dept. of Electrical Engineering (ESAT),
+              Research group SCD (SISTA),
+              Kasteelpark Arenberg 10,
+              3001 Leuven-Heverlee, Belgium, \newline
+              Tel. 32/16/32 17 09, Fax 32/16/32 19 70,  \newline
+              WWW: {\it http://www.esat.kuleuven.ac.be/sista}. \newline
+              E-mail: {\it ivan.markovsky@esat.kuleuven.ac.be}.
+Dr. Sabine Van Huffel is a full professor at the Katholieke Universiteit Leuven, Belgium. Research supported by
+Research Council KUL: GOA-Mefisto 666, IDO /99/003 and /02/009 (Predictive computer models for medical classification problems using patient data and expert knowledge), several PhD/postdoc \& fellow grants;  Flemish Government: o FWO: PhD/postdoc grants, projects, G.0078.01 (structured matrices), G.0407.02 (support vector machines), G.0269.02 (magnetic resonance spectroscopic imaging), G.0270.02 (nonlinear Lp approximation), research communities (ICCoS, ANMMM); o IWT: PhD Grants;  Belgian Federal Science Policy Office IUAP P5/22 (`Dynamical Systems and Control: Computation, Identification and Modelling');  EU: PDT-COIL, BIOPATTERN, ETUMOUR.
+       }}}
+\date{21 November 2004}
+
+\vfill
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The toolbox solves a variety of approximate modeling problems for linear static models. The model can be parameterized in kernel, image, or input/output form and the approximation criterion, called misfit, is a weighted norm between the given data and data that is consistent with the model. There are three main classes of functions in the toolbox: transformation functions, misfit computation functions, and approximation functions. The approximation functions derive an approximate model from data, the misfit computation functions are used for validation and comparison of models, and the transformation functions are used for deriving one model representation from another.
+\end{abstract}
+
+\end{document}
+
+
+~/work/dviconcat -o 04-220.dvi wtls_manual_coverpage.dvi wtls_manual.dvi
+dvips 04-220
+gzip -c 04-220.ps > 04-220.ps.gz
+mv  04-220.ps.gz /esat/ftp/sista/markovsky/reports/
